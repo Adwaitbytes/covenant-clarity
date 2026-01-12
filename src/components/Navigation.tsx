@@ -5,7 +5,6 @@ import { cn } from '@/lib/utils';
 const navItems = [
   { label: 'Facilities', path: '/facilities' },
   { label: 'Graph', path: '/graph' },
-  { label: 'Amendments', path: '/amendments' },
   { label: 'Compliance', path: '/compliance' },
   { label: 'Activity', path: '/activity' },
 ];
@@ -29,62 +28,13 @@ export function Navigation() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <div className="relative w-8 h-8">
-              <svg
-                viewBox="0 0 32 32"
-                className="w-full h-full"
-                fill="none"
-              >
-                <circle
-                  cx="16"
-                  cy="16"
-                  r="14"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  className="text-primary/50"
-                />
-                <circle
-                  cx="16"
-                  cy="16"
-                  r="6"
-                  fill="currentColor"
-                  className="text-primary"
-                />
-                <line
-                  x1="16"
-                  y1="10"
-                  x2="16"
-                  y2="2"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  className="text-primary/70"
-                />
-                <line
-                  x1="22"
-                  y1="16"
-                  x2="30"
-                  y2="16"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  className="text-primary/70"
-                />
-                <line
-                  x1="16"
-                  y1="22"
-                  x2="16"
-                  y2="30"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  className="text-primary/70"
-                />
-                <line
-                  x1="10"
-                  y1="16"
-                  x2="2"
-                  y2="16"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  className="text-primary/70"
-                />
+              <svg viewBox="0 0 32 32" className="w-full h-full" fill="none">
+                <circle cx="16" cy="16" r="14" stroke="currentColor" strokeWidth="1.5" className="text-primary opacity-50" />
+                <circle cx="16" cy="16" r="6" fill="currentColor" className="text-primary" />
+                <line x1="16" y1="10" x2="16" y2="2" stroke="currentColor" strokeWidth="1.5" className="text-primary opacity-70" />
+                <line x1="22" y1="16" x2="30" y2="16" stroke="currentColor" strokeWidth="1.5" className="text-primary opacity-70" />
+                <line x1="16" y1="22" x2="16" y2="30" stroke="currentColor" strokeWidth="1.5" className="text-primary opacity-70" />
+                <line x1="10" y1="16" x2="2" y2="16" stroke="currentColor" strokeWidth="1.5" className="text-primary opacity-70" />
               </svg>
             </div>
             <span className="font-serif text-lg font-medium text-foreground group-hover:text-primary transition-colors">
@@ -122,19 +72,14 @@ export function Navigation() {
             })}
           </nav>
 
-          {/* Actions */}
-          <div className="flex items-center gap-4">
-            {!isLanding && (
-              <Link
-                to="/facilities/new"
-                className="hidden sm:flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
-              >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                </svg>
-                New Facility
-              </Link>
-            )}
+          {/* Mobile menu button */}
+          <div className="flex md:hidden">
+            <Link
+              to="/facilities"
+              className="px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-md"
+            >
+              Get Started
+            </Link>
           </div>
         </div>
       </div>
